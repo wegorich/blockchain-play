@@ -1,0 +1,21 @@
+{
+    "name": "blockchain-play",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "testrpc": "./node_modules/.bin/testrpc --account=\"0x351494a5ae8f9b70a2a2fd482146ab4578f61d4d796685c597ec6683635a940e, 100000000000000000000\" --account=\"0x4cd491f96e6623edb52719a8d4d1110a87d8d83e3fa86f8e14007cb3831c0a2b, 100000000000000000000\"",
+        "truffle": "./node_modules/.bin/truffle.cmd migrate --reset",
+        "server": "lite-server",
+        "start": "npm run truffle && npm run server",
+        "test": "./node_modules/.bin/truffle.cmd test"
+    },
+    "devDependencies": {
+        "ethereumjs-testrpc": "^6.0.3",
+        "lite-server": "^2.3.0",
+        "truffle": "3.4.11"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}

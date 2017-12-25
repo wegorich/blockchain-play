@@ -4,6 +4,7 @@ App = {
     account: 0x0,
     target: 0x0,
     allowTransfer: false,
+    statusTimer: null,
 
     init: function() {
         return App.initWeb3();
@@ -115,11 +116,31 @@ App = {
                 gas: 500000
             });
         }).then(function(result) {
-            // App.refreshBalances();
+            App.setTransferStatus(true);
         }).catch(function(err) {
+            App.setTransferStatus(false);
             console.error(err);
         });
     },
+
+    setTransferStatus: function(success) {
+        if (App.statusTimer) {
+            clearTimeout(App.statusTimer);
+        }
+        var transferStatus = $('#transferStatus');
+        transferStatus.removeClass('alert-success alert-danger');
+        if (success) {
+            transferStatus.addClass('alert-success');
+            transferStatus.text('Transfer Successfull');
+        } else {
+            transferStatus.addClass('alert-danger');
+            transferStatus.text('Transfer Failed');
+        }
+        App.statusTimer = setTimeout(function() {
+            transferStatus.removeClass('alert-success alert-danger');
+            transferStatus.text('');
+        }, 3000);
+    }
 };
 
 $(function() {

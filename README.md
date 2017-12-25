@@ -1,8 +1,9 @@
 # blockchain-play
 
-### Setup
+- Please use Google Chrome for demo app as i didint tested it for other browsers
+- Because of Truffle cli conflict with truffle.js for Win OS (see here https://github.com/trufflesuite/truffle/issues/466) i hardcoded .cmd files in package.json to run commands successfully. Because of this this repo will work good for Win systems but not for *nix/mac.
 
-Please use Google Chrome for demo app as i didint tested it for other browsers
+### Setup
 
 1. `git clone https://github.com/ValLisetsky/blockchain-play` and step into `blockchain-play` folder
 2. Run `npm install`
